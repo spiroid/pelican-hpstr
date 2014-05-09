@@ -23,7 +23,6 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        bundleExec: true,
         relativeAssets: true,
         cssDir: 'static/css',
         sassDir: 'static/sass',
