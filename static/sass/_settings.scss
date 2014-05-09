@@ -1,0 +1,42 @@
+// TO REMOVE
+
+$background-color: #EBEBEB;
+$primary-color: #364956;
+$secondary-color: #EA141F;
+
+$var2: #455;
+$font-color: #555;
+$font-family: Helvetica, Arial, sans-serif;
+
+$phone: "screen and (max-width: 768px)";
+
+// EN TO REMOVE
+
+// Colors
+// --------------------------------------------------
+$base-color   : #222;
+$body-color   : #e8e8e8;
+$text-color   : #222;
+$comp-color   : adjust_hue($base-color, 180);
+$border-color : lighten($base-color,60);
+$white        : #fff;
+$black        : #000;
+$link-color   : #222;
+
+$primary      : $base-color;
+$success      : #5cb85c;
+$warning      : #dd8338;
+$danger       : #C64537;
+$info         : #308cbc;
+
+
+// Typography
+// --------------------------------------------------
+$base-font: 'Lato', Calibri, Arial, sans-serif;
+$heading-font: $base-font;
+$caption-font: $base-font;
+$code-font: monospace;
+$alt-font: serif;
+
+$doc-font-size: 16;
+$doc-line-height: 26;

@@ -1,0 +1,152 @@
+@import "compass/utilities/sprites";
+@import "compass/css3";
+
+// Spriting
+@import "icons/*.png";
+@include all-icons-sprites;
+
+
+// Set-up the body font-size / line-height
+body {
+    margin-top: 0px + $doc-line-height;
+    font-size: 0px + $doc-font-size;
+}
+
+
+// Selection
+// --------------------------------------------------
+::-moz-selection {
+    background-color: lighten($base-color, 65%);
+    color: $base-color;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: lighten($base-color, 65%);
+    color: $base-color;
+    text-shadow: none;
+}
+
+// Global Classes
+// --------------------------------------------------
+.wrap {
+    margin: 0 auto;
+}
+.all-caps {
+    text-transform: uppercase;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float:right;
+}
+.unstyled-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+        list-style-type: none;
+    }
+}
+.inline-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+        list-style-type: none;
+        display: inline;
+    }
+}
+
+// Global Transition
+// TODO: Investigate
+// ---------------------------------------------------
+//b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a {
+//    .transition(all .2s ease);
+//}
+
+
+
+// TO REMOVE
+body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+  font-family: $font-family;
+}
+
+
+a {
+	color: $primary-color;
+	text-decoration: none;
+
+	&:hover { color: $secondary-color; }
+}
+
+blockquote {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 1em 40px;
+}
+
+li { margin-bottom: 5px; }
+
+p {
+	line-height: 24px;
+	text-align: justify;
+}
+
+.align-center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.align-left {
+	float: left;
+	margin: 0 20px 10px 0;
+}
+
+.box {
+  background: white;
+  border: 1px solid #cdcdcd;
+}
+
+.box-content {
+  @extend .box;
+
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.clearfix { clear: both; }
+
+.entry .highlight {
+  padding: 1em;
+}
+
+.icons {
+	@include inline-block;
+
+	height: 16px;
+	width: 16px;
+}
+
+.page-title {
+  color: $primary-color;
+  font-size: 26px;
+  margin: 0 0 30px 0;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.emoticon {
+  @include text-shadow(1px 1px 1px #dedede);
+
+  color: $primary-color;
+  font-size: 64px;
+  text-align: center;
+}
+// TO REMOVE
