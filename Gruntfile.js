@@ -23,6 +23,7 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
+        config: 'config.rb',
         relativeAssets: true,
         cssDir: 'static/css',
         sassDir: 'static/sass',
@@ -32,7 +33,7 @@ module.exports = function (grunt) {
         options: {
           environment: 'development',
           outputStyle: 'expanded',
-          raw: 'line_numbers = :true\n'
+          sourcemap: true
         }
       },
       dist: {
