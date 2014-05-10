@@ -1,17 +1,3 @@
-// TO REMOVE
-
-$background-color: #EBEBEB;
-$primary-color: #364956;
-$secondary-color: #EA141F;
-
-$var2: #455;
-$font-color: #555;
-$font-family: Helvetica, Arial, sans-serif;
-
-$phone: "screen and (max-width: 768px)";
-
-// EN TO REMOVE
-
 // Colors
 // --------------------------------------------------
 $base-color   : #222;
@@ -40,3 +26,14 @@ $alt-font: serif;
 
 $doc-font-size: 16;
 $doc-line-height: 26;
+
+
+// MEDIA QUERIES
+// --------------------------------------------------
+$small:       "only screen and (min-width: 30em)";
+$medium:      "only screen and (min-width: 48em)";
+$large:       "only screen and (min-width: 62.5em)";
+//$highdensity: "only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+//              "only screen and (-o-min-device-pixel-ratio: 3/2)",
+//              "only screen and (min-resolution: 144dpi)",
+//              "only screen and (min-resolution: 1.5dppx)";

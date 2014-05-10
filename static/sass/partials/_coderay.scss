@@ -1,0 +1,77 @@
+.CodeRay {
+    font-family: $code-font;
+    @include font(12);
+    color: #d0d0d0;
+    margin-bottom: 1.5em;
+    @include border-radius(3px);
+
+    .code pre {
+        margin: 0;
+        padding: 1em;
+        background-color: #272822;
+        border: 1px solid darken($body-color, 5);
+    }
+
+    .line-numbers, .no {
+        color: #8f908a;
+        text-align: right;
+    }
+
+    .line-numbers  {
+        a {
+            color: #8f908a;
+        }
+        tt { font-weight: bold }
+        .highlighted { color: red }
+    }
+    span.line-numbers { padding: 0 24px 0 4px; }
+
+    .line { display: block; float: left; width: 100%; }
+    .code {
+        width: 100%
+
+        pre { overflow: auto }
+    }
+
+    .debug { color:white ! important; background:blue ! important; }
+
+    .doctype,
+    .key,
+    .instance-variable { color: #f8f8f2; }
+    .attribute-name { color: #a6e22e;}
+
+    .symbol,
+    .integer,
+    .float { color: #ff658b; }
+
+    .string { color: #2dc900; }
+    .keyword { color: #66d9ef; }
+
+    .function,
+    .class { color: #a6e22e; }
+
+    .regexp,
+    .constant,
+    .tag { color: #f92672; }
+
+    .modifier,
+    .predefined-constant { color: #ff84e4; }
+
+    .comment { color: #75715e; }
+    .error { color: #ecc; }
+    .content { color: #e6db74; }
+    .delimiter { color: #e6db74; }
+    .inline { color: #e6db74; }
+}
+
+
+span.CodeRay { white-space: pre; border: 0px; padding: 2px }
+
+table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
+table.CodeRay td {
+    padding: 1em 0.5em;
+    vertical-align: top;
+}
+
+ol.CodeRay { font-size: 10pt }
+ol.CodeRay li { white-space: pre }
