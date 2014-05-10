@@ -1,13 +1,27 @@
 // Reset css file
 @import "normalize";
 
-// global settings and variables
+// Global settings and variables
 @import "settings";
+
+// Global mixins
+@import "partials/mixins";
+
 @import "partials/common";
-@import "partials/grid";
-@import "partials/header";
-@import "partials/content";
-@import "partials/pagination";
-@import "partials/aside";
-@import "partials/footer";
+@import "partials/elements";
+
+// Fonts size and style
+@import "partials/typography";
+
+// Code syntax highlighting
 @import "partials/pygments";
+@import "partials/coderay";
+
+// Grid system
+@import "partials/grid";
+
+// Menu
+@import "partials/menu";
+
+// Layouts
+@import "partials/page";
