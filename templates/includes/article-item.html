@@ -1,0 +1,28 @@
+<article class="hentry">
+    <header class="entry-header">
+        <div class="entry-meta">
+            <span class="entry-date date published updated">
+                <time datetime="{{ article.date.isoformat() }}"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.locale_date }}</a></time>
+            </span>
+            <span class="author vcard">
+                {% if article.author %}
+                    {% set authorname = article.author %}
+                    {% set authorurl  = article.author.url %}
+                {% else %}
+                    {% set authorname = OWNER.NAME %}
+                    {% set authorurl  = SITEURL + '/about/' %}
+                {% endif %}
+                <span class="fn"><a href="{{ authorurl }}" title="About {{ authorname }}">{{ authorname }}</a></span>
+            </span>
+            {#% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %#}
+        </div><!-- /.entry-meta -->
+        <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}" itemprop="url">{{ article.title }}</a></h1>
+    </header>
+    <div class="entry-content">
+        {% if show_complete %}
+            {{ article.content }}
+        {% else %}
+            {{ article.summary }}
+        {% endif %}
+    </div><!-- /.entry-content -->
+</article><!-- /.hentry -->

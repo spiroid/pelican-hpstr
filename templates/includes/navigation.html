@@ -1,0 +1,57 @@
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+    <button class="dl-trigger">Open Menu</button>
+    <ul class="dl-menu">
+        <li><a href="{{ SITEURL }}">Home</a></li>
+        <li>
+            <a href="#">About</a>
+            <ul class="dl-submenu">
+                <li>
+                    <img src="{{ SITEURL }}/images/{{ OWNER.AVATAR }}" alt="{{ OWNER.NAME }} photo" class="author-photo">
+                    <h4>{{ OWNER.NAME }}</h4>
+                    <p>{{ OWNER.BIO }}</p>
+                </li>
+                <li><a href="{{ SITEURL }}/about/">Learn More</a></li>
+                {% if OWNER.EMAIL %}<li>
+                    <a href="mailto:{{ OWNER.EMAIL }}"><i class="icon-envelope"></i> Email</a>
+                </li>{% endif %}
+                {% if OWNER.TWITTER %}<li>
+                    <a href="http://twitter.com/{{ OWNER.TWITTER }}"><i class="icon-twitter"></i> Twitter</a>
+                </li>{% endif %}
+                {% if OWNER.FACEBOOK %}<li>
+                    <a href="http://facebook.com/{{ OWNER.FACEBOOK }}"><i class="icon-facebook"></i> Facebook</a>
+                </li>{% endif %}
+                {% if OWNER.GOOGLE_PLUS %}<li>
+                    <a href="{{ OWNER.GOOGLE_PLUS }}"><i class="icon-google-plus"></i> Google+</a>
+                </li>{% endif %}
+                {% if OWNER.linkedin %}<li>
+                    <a href="http://linkedin.com/in/{{ OWNER.linkedin }}"><i class="icon-linkedin"></i> LinkedIn</a>
+                </li>{% endif %}
+                {% if OWNER.GITHUB %}<li>
+                    <a href="http://github.com/{{ OWNER.GITHUB }}"><i class="icon-github"></i> GitHub</a>
+                </li>{% endif %}
+                {% if OWNER.STACKEXCHANGE %}<li>
+                    <a href="{{ OWNER.STACKEXCHANGE }}"><i class="icon-stackexchange"></i> Stackexchange</a>
+                </li>{% endif %}
+                {% if OWNER.INSTAGRAM %}<li>
+                    <a href="http://instagram.com/{{ OWNER.INSTAGRAM }}"><i class="icon-instagram"></i> Instagram</a>
+                </li>{% endif %}
+                {% if OWNER.FLICKR %}<li>
+                    <a href="http://www.flickr.com/photos/{{ OWNER.FLICKR }}"><i class="icon-flickr"></i> Flickr</a>
+                </li>{% endif %}
+                {% if OWNER.TUMBLR %}<li>
+                    <a href="http://{{ OWNER.TUMBLR }}.tumblr.com"><i class="icon-tumblr"></i> Tumblr</a>
+                </li>{% endif %}
+            </ul><!-- /.dl-submenu -->
+        </li>
+        <li>
+            <a href="#">Posts</a>
+            <ul class="dl-submenu">
+                <li><a href="{{ SITEURL }}/posts/">All Posts</a></li>
+                <li><a href="{{ SITEURL }}/tags/">All Tags</a></li>
+            </ul>
+        </li>
+        {# TODO
+            {% for link in site.links %}<li>{% if link.external %}<a href="{{ link.url }}">{{ link.title }}</a>{% else %}<a href="{{ SITEURL }}{{ link.url }}">{{ link.title }}</a>{% endif %}</li>{% endfor %}
+        #}
+    </ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
