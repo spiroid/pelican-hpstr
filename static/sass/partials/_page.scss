@@ -79,7 +79,7 @@ body {
         font-weight: 700;
         margin: 10px 60px;
         color: $white;
-        text-shadow: 1px 1px 4px fade($base-color, 60);
+        text-shadow: 1px 1px 4px rgba($base-color, 0.6);
         a {
             color: $white;
         }
@@ -111,7 +111,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: fade($base-color, 30);
+        background-color: rgba($base-color, 0.3);
     }
     img {
         position: absolute; 
@@ -133,7 +133,7 @@ body {
     margin: 0 auto;
     max-width: 440px;
     padding: 10px 15px;
-    background-color: fade($base-color, 50);
+    background-color: rgba($base-color, 0.5);
     color: $white;
     @include font-rem(12);
     text-align: right;
@@ -182,7 +182,7 @@ body {
         }
         &:active {
             @include translate(0, 1px);
-            @include box-shadow(0 0 1px fade($base-color, 20));
+            @include box-shadow(0 0 1px rgba($base-color, 0.2));
         }
     }
 }
@@ -193,7 +193,7 @@ body {
         margin: 40px 2px 20px 2px;
         padding: 10px 15px;
         background-color: $white;
-        box-shadow: 0 0 0 0, 0 6px 12px fade($black,10);
+        box-shadow: 0 0 0 0, 0 6px 12px rgba($black, 0.1);
         @include border-radius(3px);
         @media #{$medium} {
             margin-left: 10px;
@@ -213,7 +213,7 @@ body {
         margin: 40px 2px 20px 2px;
         padding: 10px 15px;
         background-color: $white;
-        box-shadow: 0 0 0 1px fade($border-color, 10), 0 6px 12px fade($black, 10);
+        box-shadow: 0 0 0 1px rgba($border-color, 0.1), 0 6px 12px rgba($black, 0.1);
         @include border-radius(3px);
         @media #{$medium} {
             margin-left: 10px;
@@ -259,7 +259,7 @@ body {
     margin: 40px 2px 20px 2px;
     padding: 40px 15px 25px;
     background-color: $white;
-    box-shadow: 0 0 0 1px fade($border-color, 10), 0 6px 12px fade($black, 10);
+    box-shadow: 0 0 0 1px rgba($border-color, 0.1), 0 6px 12px rgba($black, 0.1);
     @include border-radius(3px);
     @media #{$medium} {
         margin: 50px 10px 20px 10px;
@@ -348,7 +348,7 @@ body {
     }
     article {
         background-color: $white;
-        box-shadow: 0 0 0 0, 0 6px 12px fade($base-color,10);
+        box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color, 0.1);
         @include border-radius(3px);
         margin-bottom: 20px;
         padding: 25px 15px;

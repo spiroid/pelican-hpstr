@@ -25,7 +25,7 @@ figure {
       @include transition-duration(0.25s);
       &:hover {
           @include translate(0, -5px);
-          @include box-shadow(0 0 10px fade($base-color, 20));
+          @include box-shadow(0 0 10px rgba($base-color, 0.2));
       }
     }
   }
