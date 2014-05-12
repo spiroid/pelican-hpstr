@@ -12,6 +12,30 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // Javascript files validation
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'static/js/*.js',
+        'static/js/plugins/*.js',
+        '!static/js/scripts.min.js'
+      ]
+    },
+
+    uglify: {
+      dist: {
+        files: {
+          'static/js/scripts.min.js': [
+            'static/js/plugins/*.js',
+            'static/js/_*.js'
+          ]
+        }
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       compass: {
@@ -43,9 +67,17 @@ module.exports = function (grunt) {
           force: true
         }
       }
+    },
+
+    // Cleanup / remove some files
+    clean: {
+      dist: [
+        'static/css/main.min.css',
+        'static/js/scripts.min.js'
+      ]
     }
   });
 
-  grunt.registerTask('default', ['compass:dev', 'watch']);
+  grunt.registerTask('default', ['clean', 'uglify', 'compass:dev', 'watch']);
   grunt.registerTask('dist', ['compass:dist']);
 };
