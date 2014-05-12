@@ -50,8 +50,7 @@ module.exports = function (grunt) {
         config: 'config.rb',
         relativeAssets: true,
         cssDir: 'static/css',
-        sassDir: 'static/sass',
-        imagesDir: 'static/img'
+        sassDir: 'static/sass'
       },
       dev: {
         options: {
