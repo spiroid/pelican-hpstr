@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block page_id %}page{% endblock %}
+
+{% block page_css %}
+    {% if article.metadata.image %}
+    feature
+    {% endif %}
+{% endblock %}
+
+{% block header %}
+    {% if article.metadata.image_credit %}
+    <div class="image-credit">
+        Image source: {% if article.metadata.image_creditlink %}<a href="{{ article.metadata.image_creditlink }}">{% endif %}{{ article.metadata.image_credit }}{% if article.metadata.image_creditlink %}</a>{% endif %}
+    </div><!-- /.image-credit -->
+    {% endif %}
+    <div class="entry-image">
+        <img src="{{ SITEURL }}/images/{{ article.metadata.image }}" alt="{{ article.title }}">
+    </div><!-- /.entry-image -->
+{% endblock %}
+
+{% block content %}
+<article class="entry">
+    <header class="header-title">
+        <div class="header-title-wrap">
+            <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h1>
+            <h2><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></h2>
+        </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+
+        {{ article.content }}
+      {# TODO
+      <footer class="entry-meta">
+        {% if page.modified %}{{ page.title }} was last modified on <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified }}</time></span>
+        <span class="author vcard fn">{{ site.owner.name }}</span>{% endif %}
+        {% if page.share %}<div class="social-share">
+          <ul class="socialcount socialcount-small inline-list" data-url="{{ site.url }}{{ page.url }}" data-share-text="{{ page.title }}">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="icon-facebook-sign"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="icon-twitter-sign"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus"><span class="count"><i class="icon-google-plus-sign"></i> +1</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->{% endif %}
+    </footer>
+    #}
+    </div><!-- /.entry-content -->
+
+    {# TODO {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %} #}
+</article>
+{% endblock%}
+
+

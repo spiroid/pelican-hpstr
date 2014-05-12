@@ -7,19 +7,13 @@
     {% include "includes/head.html" %}
 </head>
 
-<body id="post-index" class="{% block page_css %}{% endblock %}">
+<body id="{% block page_id %}post-index{% endblock %}" class="{% block page_css %}{% endblock %}">
 
 {% include "includes/browser-upgrade.html" %}
 {% include "includes/navigation.html" %}
 
 <div class="entry-header">
-  {% block page_header %}{% endblock %}
-  <div class="header-title">
-    <div class="header-title-wrap">
-      <h1>{{SITENAME }}</h1>
-      {% block subtitle %}{% endblock %}
-    </div><!-- /.header-title-wrap -->
-  </div><!-- /.header-title -->
+    {% block header %}{% endblock %}
 </div><!-- /.entry-header -->
 
 <div id="main" role="main">
