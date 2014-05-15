@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set articleurl = SITEURL + '/' + article.url %}
 
 {% block page_id %}page{% endblock %}
 
@@ -23,13 +24,32 @@
 <article class="entry">
     <header class="header-title">
         <div class="header-title-wrap">
-            <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h1>
+            <h1 class="entry-title"><a href="{{ articleurl }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h1>
             <h2><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></h2>
         </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
 
         {{ article.content }}
+        <footer class="entry-meta">
+            {% if article.tags %}
+            <span class="entry-tags">
+                {% for tag in article.tags %}<a href="{{ tag.url }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% endfor %}
+            </span>
+            {% endif %}
+            <span><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> was published on <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span></span>
+            {% if article.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ article.modified }}">{{ article.modified  }}</time></span>){% endif %}
+            <span class="author vcard"><span class="fn"><a href="{{ SITEURL }}/about/" title="About {{ AUTHOR }}">{{ AUTHOR }}</a></span></span>
+            {% if article.metadata.share %}
+            <div class="social-share">
+                <ul class="socialcount socialcount-small inline-list">
+                    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ articleurl }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+                    <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ articleurl }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+                    <li class="googleplus"><a href="https://plus.google.com/share?url={{ articleurl }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+                </ul>
+            </div><!-- /.social-share -->
+            {% endif %}
+        </footer>
       {# TODO
       <footer class="entry-meta">
         {% if page.modified %}{{ page.title }} was last modified on <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified }}</time></span>
