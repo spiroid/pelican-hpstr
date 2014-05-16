@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block page_css %}feature{% endblock %}
+
+{% block content %}
+{% for article in articles_page.object_list %}
+    {% include "includes/article-item.html" %}
+{% endfor %}
+
+{% include "includes/pagination.html" %}
+{% endblock %}

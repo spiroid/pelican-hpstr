@@ -1,13 +1,3 @@
-{% extends "base.html" %}
-
-{% block page_css %}feature{% endblock %}
+{% extends "base_article_list.html" %}
 
 {% block title %}All posts{% endblock %}
-
-{% block content %}
-{% for article in articles_page.object_list %}
-    {% include "includes/article-item.html" %}
-{% endfor %}
-
-{% include "includes/pagination.html" %}
-{% endblock %}
