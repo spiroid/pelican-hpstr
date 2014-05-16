@@ -2,17 +2,7 @@
 
 {% block page_css %}feature{% endblock %}
 
-{% block header %}
-<div class="entry-image">
-  <img src="{{ SITEURL }}/theme/img/header.jpg" alt="{{ SITENAME }}">
-</div><!-- /.entry-image -->
-
-<div class="header-title">
-  <div class="header-title-wrap">
-    <h1>{{SITENAME }}</h1>
-  </div><!-- /.header-title-wrap -->
-</div><!-- /.header-title -->
-{% endblock %}
+{% block title %}All posts{% endblock %}
 
 {% block content %}
 {% for article in articles_page.object_list %}

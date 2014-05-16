@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block page_css %}feature{% endblock %}
+
+{% block title %}Tag Archive{% endblock %}
+
+{% block content %}
+<ul class="entry-meta inline-list">
+    {% for tag, articles in tags|sort %}
+    <li>
+        {% set num = articles|count %}
+        <a href="#{{ tag.slug }}" class="tag">{{ tag }}<span>{{ num }}</span></a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% for tag, articles in tags | sort %}
+<article>
+    <h2 id="{{ tag.slug }}">{{ tag }}</h2>
+    <ul>
+        {% for article in articles|sort(reverse = true, attribute = 'date') %}
+        <li class="entry-title">
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a>
+            <span class="entry-meta"> &nbsp;<time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
+        </li>
+        {% endfor %}
+    </ul>
+</article><!-- /.hentry -->
+{% endfor %}
+{% endblock %}
