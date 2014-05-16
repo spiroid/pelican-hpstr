@@ -29,7 +29,6 @@
         </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-
         {{ article.content }}
         <footer class="entry-meta">
             {% if article.tags %}
@@ -37,9 +36,13 @@
                 {% for tag in article.tags %}<a href="{{ tag.url }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% endfor %}
             </span>
             {% endif %}
-            <span><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> was published on <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span></span>
-            {% if article.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ article.modified }}">{{ article.modified  }}</time></span>){% endif %}
-            <span class="author vcard"><span class="fn"><a href="{{ SITEURL }}/about/" title="About {{ AUTHOR }}">{{ AUTHOR }}</a></span></span>
+
+            <p>
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> was published on <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span>
+                {% if article.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time></span>){% endif %}<br>
+                <span class="author vcard"><span class="fn"><a href="{{ SITEURL }}/about/" title="About {{ AUTHOR }}">{{ AUTHOR }}</a></span></span>
+            </p>
+
             {% if article.metadata.share %}
             <div class="social-share">
                 <ul class="socialcount socialcount-small inline-list">
@@ -49,23 +52,38 @@
                 </ul>
             </div><!-- /.social-share -->
             {% endif %}
+
         </footer>
-      {# TODO
-      <footer class="entry-meta">
-        {% if page.modified %}{{ page.title }} was last modified on <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified }}</time></span>
-        <span class="author vcard fn">{{ site.owner.name }}</span>{% endif %}
-        {% if page.share %}<div class="social-share">
-          <ul class="socialcount socialcount-small inline-list" data-url="{{ site.url }}{{ page.url }}" data-share-text="{{ page.title }}">
-            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="icon-facebook-sign"></i> Like</span></a></li>
-            <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="icon-twitter-sign"></i> Tweet</span></a></li>
-            <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus"><span class="count"><i class="icon-google-plus-sign"></i> +1</span></a></li>
-          </ul>
-        </div><!-- /.social-share -->{% endif %}
-    </footer>
-    #}
     </div><!-- /.entry-content -->
 
-    {# TODO {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %} #}
+    {# TODO -- comments {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %} #}
+
+    {% if article.related_posts %}
+    <div id="read-more" class="read-more">
+        {% set post = article.related_posts | first %}
+        <div class="read-more-header">
+            <a href="{% if article.prev_article %}{{ SITEURL }}/{{ article.prev_article.url}}{% else %}#read-more{% endif %}" class="read-more-btn">Read More</a>
+        </div><!-- /.read-more-header -->
+
+        <div class="read-more-content">
+            <h3><a href="{{ SITEURL }}/{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+            <p>{{ post.summary | truncate(140) }}<br>
+                <a href="{{ SITEURL }}/{{ post.url }}">Continue reading</a>
+            </p>
+        </div><!-- /.read-more-content -->
+
+        <div class="read-more-list">
+        {% for post in article.related_posts %}
+            {% if loop.index > 1 and loop.index <= 3 %}
+            <div class="list-item">
+                <h4><a href="{{ SITEURL }}/{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+                <span>Published on {{ post.date | strftime('%d %B %Y') }}</span>
+            </div><!-- /.list-item -->
+            {% endif %}
+        {% endfor %}
+        </div><!-- /.read-more-list -->
+    </div><!-- /.read-more -->
+    {% endif %}
 </article>
 {% endblock%}
 
