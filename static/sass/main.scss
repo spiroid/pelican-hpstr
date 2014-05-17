@@ -1,5 +1,7 @@
 // Reset css file
-@import "normalize";
+@import "h5bp";
+@include h5bp-normalize;
+@include h5bp-media;
 
 // Global settings and variables
 @import "settings";
@@ -7,6 +9,9 @@
 // Global mixins
 @import "partials/mixins";
 @import "partials/mixins-animation";
+
+// Extends reset css with few new rules
+@import "partials/reset";
 
 @import "partials/common";
 @import "partials/elements";

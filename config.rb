@@ -1,1 +1,1 @@
-require 'compass-normalize'
+require 'compass-h5bp'
