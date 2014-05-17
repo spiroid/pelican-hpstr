@@ -217,7 +217,7 @@
 }
 
 
-@include keyframes(SubMenuAnimIn) {
+@include keyframes(SubMenuAnimOut) {
     0% {
         @include translateZ(0px);
         opacity: 1;

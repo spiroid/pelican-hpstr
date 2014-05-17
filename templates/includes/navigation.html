@@ -6,7 +6,7 @@
             <a href="#">About</a>
             <ul class="dl-submenu">
                 <li>
-                    <img src="{{ SITEURL }}/images/{{ AVATAR }}" alt="{{ AUTHOR }} photo" class="author-photo">
+                    <img src="{{ SITEURL }}/images/avatar.jpg" alt="{{ AUTHOR }} photo" class="author-photo">
                     <h4>{{ AUTHOR }}</h4>
                     <p>{{ BIO }}</p>
                 </li>
@@ -18,7 +18,7 @@
                 {% endif %}
                 {% for social in SOCIAL %}
                 <li>
-                    <a href="{{ social[1] }}"><i class="icon-{{ social[0] }}"></i> {{ social[0] | capitalize }}</a>
+                    <a href="{{ social[1] }}"><i class="fa fa-{{ social[0] }}"></i>{% if social|length == 3 %}{{ social[2] }}{% else %}{{ social[0] | capitalize }}{% endif %}</a>
                 </li>
                 {% endfor %}
             </ul><!-- /.dl-submenu -->
@@ -26,8 +26,8 @@
         <li>
             <a href="#">Posts</a>
             <ul class="dl-submenu">
-                <li><a href="{{ SITEURL }}/posts/">All Posts</a></li>
-                <li><a href="{{ SITEURL }}/tags/">All Tags</a></li>
+                <li><a href="{{ SITEURL }}/">All Posts</a></li>
+                <li><a href="{{ SITEURL }}/tags.html">All Tags</a></li>
             </ul>
         </li>
         {# TODO
