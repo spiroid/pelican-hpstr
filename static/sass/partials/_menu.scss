@@ -144,6 +144,7 @@
     .dl-submenu {
         @include border-radius(3px);
         box-shadow: 0 12px 24px rgba($black, 0.35);
+        margin: 0;
     }
     /* Hide the inner submenus */
     li .dl-submenu {
