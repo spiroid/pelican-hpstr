@@ -1,12 +1,19 @@
 {% extends "base.html" %}
+{% from 'includes/macros.html' import background_image %}
+
 {% set articleurl = SITEURL + '/' + article.url %}
 
+{% block robots %} article, test{% endblock %}
 {% block page_id %}post{% endblock %}
 
 {% block page_css %}
     {% if article.metadata.image %}
     feature
     {% endif %}
+{% endblock %}
+
+{% block background %}
+    {{ background_image(article.metadata.image_background)}}
 {% endblock %}
 
 {% block header %}
