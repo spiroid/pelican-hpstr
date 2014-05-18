@@ -2,21 +2,21 @@
 
 {% block page_css %}feature{% endblock %}
 
-{% block title %}Tags{% endblock %}
+{% block title %}Categories{% endblock %}
 
 {% block content %}
 <ul class="entry-meta inline-list">
-    {% for tag, articles in tags|sort %}
+    {% for category, articles in categories|sort %}
     <li>
         {% set num = articles|count %}
-        <a href="#{{ tag.slug }}" class="tag">{{ tag }}<span>{{ num }}</span></a>
+        <a href="#{{ category.slug }}" class="tag">{{ category }}<span>{{ num }}</span></a>
     </li>
     {% endfor %}
 </ul>
 
-{% for tag, articles in tags | sort %}
+{% for category, articles in categories | sort %}
 <article>
-    <h2 id="{{ tag.slug }}">{{ tag }}</h2>
+    <h2 id="{{ category.slug }}">{{ category }}</h2>
     <ul>
         {% for article in articles|sort(reverse = true, attribute = 'date') %}
         <li class="entry-title">
