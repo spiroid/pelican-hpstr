@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page_css %}feature{% endblock %}
+
+{% block title %}Archives{% endblock %}
+
+{% block content %}
+    {% for year, date_year in dates|groupby( 'date.year' )|sort(reverse=True) %}
+    <article>
+    <h2>{{ year }}</h2>
+    <ol>
+        {% for article in date_year %}
+        <li>
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a>
+            <span class="entry-meta"> &nbsp;<time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span>
+        </li>
+        {% endfor %}
+    </ol>
+    </article>
+    {% endfor %}
+{% endblock %}
