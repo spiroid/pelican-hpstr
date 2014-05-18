@@ -12,8 +12,8 @@
 {% include "includes/browser-upgrade.html" %}
 {% include "includes/navigation.html" %}
 
+{% block header %}
 <div class="entry-header">
-    {% block header %}
     <div class="entry-image">
       <img src="{{ SITEURL }}/theme/img/header.jpg" alt="{{ SITENAME }}">
     </div><!-- /.entry-image -->
@@ -24,8 +24,8 @@
         <h2>{% block title %}{% endblock %}<h2>
       </div><!-- /.header-title-wrap -->
     </div><!-- /.header-title -->
-    {% endblock %}
 </div><!-- /.entry-header -->
+{% endblock %}
 
 <div id="main" role="main">
   {% block content %}{% endblock %}
