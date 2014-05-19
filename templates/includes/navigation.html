@@ -6,14 +6,14 @@
             <a href="#">About</a>
             <ul class="dl-submenu">
                 <li>
-                    <img src="{{ SITEURL }}/images/avatar.jpg" alt="{{ AUTHOR }} photo" class="author-photo">
+                    <img src="{{ SITEURL }}/images/{{ AVATAR if AVATAR else 'avatar.jpg'}}" alt="{{ AUTHOR }} photo" class="author-photo">
                     <h4>{{ AUTHOR }}</h4>
-                    <p>{{ BIO }}</p>
+                    <p>{{ AUTHOR_ABOUT }}</p>
                 </li>
-                <li><a href="{{ SITEURL }}/about/">Learn More</a></li>
+                <li><a href="{{ SITEURL }}/about.html">Learn More</a></li>
                 {% if EMAIL %}
                 <li>
-                    <a href="mailto:{{ EMAIL }}"><i class="icon-envelope"></i> Email</a>
+                    <a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope"></i> Email</a>
                 </li>
                 {% endif %}
                 {% for social in SOCIAL %}
@@ -26,8 +26,8 @@
         <li>
             <a href="#">Posts</a>
             <ul class="dl-submenu">
-                <li><a href="{{ SITEURL }}/">All Posts</a></li>
                 <li><a href="{{ SITEURL }}/tags.html">All Tags</a></li>
+                <li><a href="{{ SITEURL }}/categories.html">All Categories</a></li>
             </ul>
         </li>
         {# TODO
