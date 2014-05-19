@@ -1,3 +1,11 @@
+{% from 'includes/macros.html' import feed with context%}
+
 {% extends "base_article_list.html" %}
+{% block meta_robots %}noindex,follow{% endblock %}
+
+{% block head_extra %}
+{{ feed(TAG_FEED_ATOM|format(tag.slug) if TAG_FEED_ATOM else None, 'atom+xml') }}
+{{ feed(TAG_FEED_RSS|format(tag.slug) if TAG_FEED_RSS else None, 'rss+xml') }}
+{% endblock %}
 
 {% block title %}Posts tagged with "{{ tag }}"{% endblock %}

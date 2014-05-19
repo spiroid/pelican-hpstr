@@ -5,11 +5,14 @@
 <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
+    <meta name="robots" content="{% block meta_robots %}index,follow{% endblock %}">
     {% include "includes/head.html" %}
+
+    <title>{% block head_title %}{{ SITENAME }}{% endblock %}</title>
+    {% block head_extra %}{% endblock %}
+
     <!-- Background image -->
-    {% block background %}
-    {{ background_image()}}
-    {% endblock %}
+    {% block background %}{{ background_image()}}{% endblock %}
 </head>
 
 <body id="{% block page_id %}post-index{% endblock %}" class="{% block page_css %}{% endblock %}">
@@ -20,13 +23,13 @@
 {% block header %}
 <div class="entry-header">
     <div class="entry-image">
-      <img src="{{ SITEURL }}/theme/img/header.jpg" alt="{{ SITENAME }}">
+      <img src="{{ SITEURL }}/images/header.jpg" alt="{{ SITENAME }}">
     </div><!-- /.entry-image -->
 
     <div class="header-title">
       <div class="header-title-wrap">
         <h1>{{ SITENAME }}</h1>
-        <h2>{% block title %}{% endblock %}<h2>
+        <h2>{% block title %}{% endblock %}</h2>
       </div><!-- /.header-title-wrap -->
     </div><!-- /.header-title -->
 </div><!-- /.entry-header -->

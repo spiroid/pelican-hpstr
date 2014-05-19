@@ -1,50 +1,29 @@
+{% from 'includes/macros.html' import feed with context%}
 <meta charset="utf-8">
-<title>{% block title %}{{ SITESUBTITLE }}{% endblock %} &#8211; {% block sitename %}{{ SITENAME }}{% endblock %}</title>
-<meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
-
-<meta name="robots" content="{% block robots %}index,follow{% endblock %}">
-
-{#
-{% if site.owner.twitter %}<!-- Twitter Cards -->
-{% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
-{% else %}<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
-
-<!-- Open Graph -->
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:site_name" content="{{ site.title }}">
-
-{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
-{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
-{% if site.owner.google_plus %}<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
-#}
-
-<link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} &raquo; Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" />
-<link rel="canonical" href="{% block canonical_url %}{{ SITEURL }}/{{ page_name }}{% if articles_page and articles_page.number != 1 %}{{ articles_page.number }}{% endif %}.html{% endblock %}">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- mobile IE browsers hack -->
+<!-- Allows activation of ClearType in Mobile ie for smoothing font -->
+<meta http-equiv="cleartype" content="on">
+
+<link rel="canonical" href="{% block canonical_url %}{{ SITEURL }}/{{ page_name }}{% if articles_page and articles_page.number != 1 %}{{ articles_page.number }}{% endif %}.html{% endblock %}">
+
+<!-- RSS feeds -->
+{{ feed(FEED_ALL_ATOM, 'atom+xml') }}
+{{ feed(FEED_ATOM, 'atom+xml') }}
+{{ feed(FEED_ALL_RSS, 'rss+xml') }}
+{{ feed(FEED_RSS, 'rss+xml') }}
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css">
+
 <!-- Webfonts -->
 <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
-
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="{{ SITEURL }}/theme/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
@@ -59,3 +38,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ SITEURL }}/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ SITEURL }}/images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- Load Modernizr -->
+<script src="{{ SITEURL }}/theme/js/vendor/modernizr-2.6.2.custom.min.js"></script>

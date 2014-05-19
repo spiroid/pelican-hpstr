@@ -3,7 +3,6 @@
 
 {% set articleurl = SITEURL + '/' + article.url %}
 
-{% block robots %} article, test{% endblock %}
 {% block page_id %}post{% endblock %}
 
 {% block page_css %}
@@ -44,7 +43,7 @@
         <footer class="entry-meta">
             {% if article.tags %}
             <span class="entry-tags">
-                {% for tag in article.tags %}<a href="{{ tag.url }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% endfor %}
+                {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% endfor %}
             </span>
             {% endif %}
 

@@ -1,8 +1,15 @@
-{% macro background_image(image) %}
-
+{% macro background_image(image) -%}
 {% set bg_image = image if image else BACKGOURND %}
 {% if bg_image %}
     <style type="text/css">body { background-image:url({{ SITEURL }}/images/{{ bg_image }}); }</style>
 {% endif %}
+{%- endmacro %}
 
-{% endmacro %}
+
+{% macro feed(filename, type) -%}
+{% if filename -%}
+{% set title = 'Atom Feed' if type == 'atom+xml' else 'RSS Feed' %}
+<link href="{{ FEED_DOMAIN if FEED_DOMAIN else SITEURL }}/{{ filename }}" rel="alternate" title="{{ SITENAME }} {{ title }}" type="application/{{ type }}">
+{%- endif %}
+{%- endmacro %}
+
