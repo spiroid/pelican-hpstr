@@ -20,7 +20,7 @@
 <div class="entry-header">
     {% if article.metadata.image_credit %}
     <div class="image-credit">
-        Image source: {% if article.metadata.image_creditlink %}<a href="{{ article.metadata.image_creditlink }}">{% endif %}{{ article.metadata.image_credit }}{% if article.metadata.image_creditlink %}</a>{% endif %}
+        {{ _('Image source:') }} {% if article.metadata.image_creditlink %}<a href="{{ article.metadata.image_creditlink }}">{% endif %}{{ article.metadata.image_credit }}{% if article.metadata.image_creditlink %}</a>{% endif %}
     </div><!-- /.image-credit -->
     {% endif %}
     <div class="entry-image">
