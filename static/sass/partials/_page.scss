@@ -189,6 +189,12 @@ body {
             @include box-shadow(0 0 1px rgba($base-color, 0.2));
         }
     }
+    > .entry-category {
+        margin-right: 10px;
+    }
+    .entry-tag {
+        padding-right: 5px;
+    }
 }
 
 #post,

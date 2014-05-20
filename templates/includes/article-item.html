@@ -15,6 +15,15 @@
                 <span class="fn"><a href="{{ authorurl }}" title="About {{ authorname }}">{{ authorname }}</a></span>
             </span>
             {#% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %#}
+            <br>
+            {% if article.category %}
+            <span class="entry-category"><i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" >{{ article.category }}</a></span>
+            {% endif %}
+            {% if article.tags %}
+            <span class="entry-tags-small">
+                {% for tag in article.tags %}<span class="entry-tag"><i class="fa fa-tag"></i>&nbsp;<a href="{{ SITEURL }}/{{ tag.url }}" title="Pages tagged {{ tag }}">{{ tag }}</a>&nbsp;</span>{% endfor %}
+            </span>
+            {% endif %}
         </div><!-- /.entry-meta -->
         <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}" itemprop="url">{{ article.title }}</a></h1>
     </header>
