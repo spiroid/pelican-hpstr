@@ -1,9 +1,9 @@
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
-    <button class="dl-trigger">Open Menu</button>
+    <button class="dl-trigger">{{ _('Open Menu') }}</button>
     <ul class="dl-menu">
-        <li><a href="{{ SITEURL }}">Home</a></li>
+        <li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
         <li>
-            <a href="#">About</a>
+            <a href="#">{{ _('About') }}</a>
             <ul class="dl-submenu">
                 <li>
                     <img src="{{ SITEURL }}/images/{{ AVATAR if AVATAR else 'avatar.jpg'}}" alt="{{ AUTHOR }} photo" class="author-photo">
@@ -13,7 +13,7 @@
                 <li><a href="{{ SITEURL }}/about.html">{{ _('Learn More') }}</a></li>
                 {% if EMAIL %}
                 <li>
-                    <a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope"></i> Email</a>
+                <a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope"></i> {{ _('Email') }}</a>
                 </li>
                 {% endif %}
                 {% for social in SOCIAL %}
@@ -24,10 +24,10 @@
             </ul><!-- /.dl-submenu -->
         </li>
         <li>
-            <a href="#">Posts</a>
+            <a href="#">{{ _('Posts') }}</a>
             <ul class="dl-submenu">
-                <li><a href="{{ SITEURL }}/tags.html">All Tags</a></li>
-                <li><a href="{{ SITEURL }}/categories.html">All Categories</a></li>
+                <li><a href="{{ SITEURL }}/tags.html">{{ _('All Tags') }}</a></li>
+                <li><a href="{{ SITEURL }}/categories.html">{{ _('All Categories') }}</a></li>
             </ul>
         </li>
         {# TODO

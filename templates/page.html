@@ -14,7 +14,7 @@
 <div class="entry-header">
     {% if page.metadata.image_credit %}
     <div class="image-credit">
-        Image source: {% if page.metadata.image_creditlink %}<a href="{{ page.metadata.image_creditlink }}">{% endif %}{{ page.metadata.image_credit }}{% if page.metadata.image_creditlink %}</a>{% endif %}
+        {{ _('Image source:') }} {% if page.metadata.image_creditlink %}<a href="{{ page.metadata.image_creditlink }}">{% endif %}{{ page.metadata.image_credit }}{% if page.metadata.image_creditlink %}</a>{% endif %}
     </div><!-- /.image-credit -->
     {% endif %}
     <div class="entry-image">
@@ -47,5 +47,3 @@
     </div><!-- /.entry-content -->
 </article>
 {% endblock%}
-
-

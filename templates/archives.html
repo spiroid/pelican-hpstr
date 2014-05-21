@@ -3,7 +3,7 @@
 {% block meta_robots %}noindex,follow{% endblock %}
 {% block page_css %}feature{% endblock %}
 
-{% block title %}Archives{% endblock %}
+{% block title %}{{ _('Archives') }}{% endblock %}
 
 {% block content %}
     {% for year, date_year in dates|groupby( 'date.year' )|sort(reverse=True) %}

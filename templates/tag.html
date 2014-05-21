@@ -8,4 +8,4 @@
 {{ feed(TAG_FEED_RSS|format(tag.slug) if TAG_FEED_RSS else None, 'rss+xml') }}
 {% endblock %}
 
-{% block title %}Posts tagged with "{{ tag }}"{% endblock %}
+{% block title %}{{ _('Posts tagged with %(tag)s', tag=tag) }}{% endblock %}

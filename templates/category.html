@@ -9,4 +9,4 @@
 {{ feed(CATEGORY_FEED_RSS|format(category.slug) if CATEGORY_FEED_RSS else None, 'rss+xml') }}
 {% endblock %}
 
-{% block title %}Posts in "{{ category }}"{% endblock %}
+{% block title %}{{ _('Posts in %(category)s category', category=category) }}{% endblock %}

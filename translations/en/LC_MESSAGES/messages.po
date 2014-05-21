@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-05-20 14:02+0200\n"
+"POT-Creation-Date: 2014-05-21 22:46+0200\n"
 "PO-Revision-Date: 2014-05-20 14:05+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -17,11 +17,113 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: templates/article.html:23
+#: templates/archives.html:6
+msgid "Archives"
+msgstr ""
+
+#: templates/article.html:23 templates/page.html:17
 msgid "Image source:"
+msgstr ""
+
+#: templates/article.html:51
+msgid "was published on"
+msgstr ""
+
+#: templates/article.html:52
+msgid "revised:"
+msgstr ""
+
+#: templates/article.html:55
+msgid "in"
+msgstr ""
+
+#: templates/article.html:84
+msgid "Continue reading"
+msgstr ""
+
+#: templates/article.html:93
+msgid "Published on"
+msgstr ""
+
+#: templates/author.html:4
+#, python-format
+msgid "Posts by %(author)s"
+msgstr ""
+
+#: templates/categories.html:6
+msgid "Categories"
+msgstr ""
+
+#: templates/category.html:12
+#, python-format
+msgid "Posts in %(category)s category"
+msgstr ""
+
+#: templates/tag.html:11
+#, python-format
+msgid "Posts tagged with %(tag)s"
+msgstr ""
+
+#: templates/tags.html:6
+msgid "Tags"
+msgstr ""
+
+#: templates/includes/footer.html:1
+msgid "Powered by"
+msgstr ""
+
+#: templates/includes/footer.html:1
+msgid "using"
+msgstr ""
+
+#: templates/includes/navigation.html:2
+msgid "Open Menu"
+msgstr ""
+
+#: templates/includes/navigation.html:4
+msgid "Home"
+msgstr ""
+
+#: templates/includes/navigation.html:6
+msgid "About"
 msgstr ""
 
 #: templates/includes/navigation.html:13
 msgid "Learn More"
 msgstr ""
+
+#: templates/includes/navigation.html:16
+msgid "Email"
+msgstr ""
+
+#: templates/includes/navigation.html:27
+msgid "Posts"
+msgstr ""
+
+#: templates/includes/navigation.html:29
+msgid "All Tags"
+msgstr ""
+
+#: templates/includes/navigation.html:30
+msgid "All Categories"
+msgstr ""
+
+#: templates/includes/pagination.html:5 templates/includes/pagination.html:7
+msgid "Previous page"
+msgstr ""
+
+#: templates/includes/pagination.html:5 templates/includes/pagination.html:7
+msgid "Previous"
+msgstr ""
+
+#: templates/includes/pagination.html:25
+msgid "Next page"
+msgstr ""
+
+#: templates/includes/pagination.html:25
+msgid "Next"
+msgstr ""
+
+#~ msgid "Learn More"
+#~ msgstr "Wrong text"
 

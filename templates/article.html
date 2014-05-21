@@ -48,11 +48,11 @@
             {% endif %}
 
             <p>
-                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> was published on <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span>
-                {% if article.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time></span>){% endif %}<br>
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> {{ _('was published on') }} <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span>
+                {% if article.modified %}({{ _('revised:') }} <span class="entry-date date modified"><time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time></span>){% endif %}<br>
                 <span class="author vcard"><span class="fn"><a href="{{ SITEURL }}/about/" title="About {{ AUTHOR }}">{{ AUTHOR }}</a></span></span>
                 {% if article.category %}
-                    <span class="entry-category">&nbsp;in<i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" >{{ article.category }}</a></span>
+                    <span class="entry-category">&nbsp;{{ _('in') }}&nbsp;&nbsp;<i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" >{{ article.category }}</a></span>
                 {% endif %}
             </p>
 
@@ -80,8 +80,8 @@
 
         <div class="read-more-content">
             <h3><a href="{{ SITEURL }}/{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-            <p>{{ post.summary | truncate(140) }}<br>
-                <a href="{{ SITEURL }}/{{ post.url }}">Continue reading</a>
+            <p>{{ post.summary | e | truncate(140) }}<br>
+                <a href="{{ SITEURL }}/{{ post.url }}">{{ _('Continue reading') }}</a>
             </p>
         </div><!-- /.read-more-content -->
 
@@ -90,7 +90,7 @@
             {% if loop.index > 1 and loop.index <= 3 %}
             <div class="list-item">
                 <h4><a href="{{ SITEURL }}/{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
-                <span>Published on {{ post.date | strftime('%d %B %Y') }}</span>
+                <span>{{ _('Published on') }} {{ post.date | strftime('%d %B %Y') }}</span>
             </div><!-- /.list-item -->
             {% endif %}
         {% endfor %}
