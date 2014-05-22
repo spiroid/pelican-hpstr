@@ -1,3 +1,9 @@
+# Babel files
+*.mo
+
+# Styles
+# SCSS -> CSS source maps
+*.map
 
 # Ruby
 /Gemfile.lock
