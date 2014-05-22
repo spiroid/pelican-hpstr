@@ -1,12 +1,17 @@
-// Reset css file
+// HTML5 Boilerplate
 @import "h5bp";
+
+// Compass css3 mixins
+@import "compass/css3";
+
+// Reset css directives
 @include h5bp-normalize;
 @include h5bp-media;
 
 // Global settings and variables
 @import "settings";
 
-// Global mixins
+// Custom mixins
 @import "partials/mixins";
 @import "partials/mixins-animation";
 

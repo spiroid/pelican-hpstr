@@ -28,3 +28,9 @@ img {
 .google-maps img {
   max-width: none;
 }
+
+// Html
+// No background
+html {
+    @include background(none);
+}
