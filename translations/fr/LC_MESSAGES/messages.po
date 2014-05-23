@@ -1,0 +1,125 @@
+# French translations for PROJECT.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-05-21 22:46+0200\n"
+"PO-Revision-Date: 2014-05-20 14:05+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: templates/archives.html:6
+msgid "Archives"
+msgstr "Archives"
+
+#: templates/article.html:23 templates/page.html:17
+msgid "Image source:"
+msgstr "Source de l'image :"
+
+#: templates/article.html:51
+msgid "was published on"
+msgstr "a été publié le"
+
+#: templates/article.html:52
+msgid "revised:"
+msgstr "modifié le :"
+
+#: templates/article.html:55
+msgid "in"
+msgstr "dans"
+
+#: templates/article.html:84
+msgid "Continue reading"
+msgstr "Lire la suite"
+
+#: templates/article.html:93
+msgid "Published on"
+msgstr "Publié le"
+
+#: templates/author.html:4
+#, python-format
+msgid "Posts by %(author)s"
+msgstr "Articles rédigés par %(author)s"
+
+#: templates/categories.html:6
+msgid "Categories"
+msgstr "Catégories"
+
+#: templates/category.html:12
+#, python-format
+msgid "Posts in %(category)s category"
+msgstr "Articles dans la catégorie %(category)s"
+
+#: templates/tag.html:11
+#, python-format
+msgid "Posts tagged with %(tag)s"
+msgstr "Articles taggués avec le mot clé %(tag)s"
+
+#: templates/tags.html:6
+msgid "Tags"
+msgstr "Mots clés"
+
+#: templates/includes/footer.html:1
+msgid "Powered by"
+msgstr "Propulsé par"
+
+#: templates/includes/footer.html:1
+msgid "using"
+msgstr "et basé sur"
+
+#: templates/includes/navigation.html:2
+msgid "Open Menu"
+msgstr "Déplier le menu"
+
+#: templates/includes/navigation.html:4
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/includes/navigation.html:6
+msgid "About"
+msgstr "A propos"
+
+#: templates/includes/navigation.html:13
+msgid "Learn More"
+msgstr "En savoir plus"
+
+#: templates/includes/navigation.html:16
+msgid "Email"
+msgstr "Email"
+
+#: templates/includes/navigation.html:27
+msgid "Posts"
+msgstr "Articles"
+
+#: templates/includes/navigation.html:29
+msgid "All Tags"
+msgstr "Par mot clé"
+
+#: templates/includes/navigation.html:30
+msgid "All Categories"
+msgstr "Par catégorie"
+
+#: templates/includes/pagination.html:5 templates/includes/pagination.html:7
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: templates/includes/pagination.html:5 templates/includes/pagination.html:7
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/includes/pagination.html:25
+msgid "Next page"
+msgstr "Page suivante"
+
+#: templates/includes/pagination.html:25
+msgid "Next"
+msgstr "Suivant"

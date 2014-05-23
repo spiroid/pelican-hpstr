@@ -36,6 +36,14 @@ module.exports = function (grunt) {
       }
     },
 
+    lingua: {
+      extract: {
+        potDest: 'messages.pot', // dest path must exist
+        scanDirs: ['.'] // array of directories to scan
+      }
+    },
+
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       compass: {

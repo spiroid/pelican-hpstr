@@ -2,9 +2,9 @@
 <nav class="pagination">
     {% if articles_page.has_previous() %}
         {% if articles_page.previous_page_number() == 1 %}
-            <a href="{{ SITEURL }}/{{ page_name }}.html" title="Previous page" class="btn">Previous</a>
+        <a href="{{ SITEURL }}/{{ page_name }}.html" title="{{ _('Previous page') }}" class="btn">{{ _('Previous') }}</a>
         {% else %}
-            <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html" title="Previous page">Previous</a>
+        <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html" title="{{ _('Previous page') }}">{{ _('Previous') }}</a>
         {% endif %}
     {% endif %}
 
@@ -22,7 +22,7 @@
     </ul>
 
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" title="Next page" class="btn">Next</a>
+    <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" title="{{ _('Next page') }}" class="btn">{{ _('Next') }}</a>
     {% endif %}
 </nav>
 {% endif %}
