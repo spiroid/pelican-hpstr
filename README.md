@@ -13,6 +13,7 @@ All credits for that beautiful theme go to [Michael Rose](https://github.com/mmi
 * Readable typography to make your words shine.
 * Support for large images to call out your favorite posts.
 * Social Sharing links for Facebook, Twitter, and Google+ if you choose to enable.
+* Google Analytics
 
 
 ## Supported plugins
@@ -30,7 +31,7 @@ Here are the plugins that should work out of the box with that theme if enabled:
     Extends the translations functionality by creating internationalized sub-sites for the default site. Also takes care of translating theme items.
 
   
-## Setup for you pelican website
+## Setup for an existing pelican website
 
 1. Clone this theme into your pelican's site theme directory
 2. Update your site ```pelicanconf.py``` configuration file
@@ -103,6 +104,16 @@ SITEMAP = {
 # I18n
 I18N_TEMPLATES_LANG = 'en'
 
+```
+
+3. Deployement specific configuration ```publishconf.py```
+
+``` python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+
+# Enable google analytics
+GOOGLE_ANALYTICS = "YOUR TRACKING ID"
 ```
 
 
