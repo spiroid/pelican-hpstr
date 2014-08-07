@@ -13,6 +13,7 @@ All credits for that beautiful theme go to [Michael Rose](https://github.com/mmi
 * Readable typography to make your words shine.
 * Support for large images to call out your favorite posts.
 * Social Sharing links for Facebook, Twitter, and Google+ if you choose to enable.
+* [FontAwesome](http://fortawesome.github.io/Font-Awesome/) 4.1.0 ready. Include any of the [439 available icons](http://fortawesome.github.io/Font-Awesome/icons/) in your blog posts.
 
 
 ## Supported plugins
