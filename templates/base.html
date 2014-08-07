@@ -46,6 +46,8 @@
 </div><!-- /.footer-wrapper -->
 
 {% include "includes/scripts.html" %}
-{% include "includes/analytics.js.html" %}
+{% if GOOGLE_ANALYTICS %}
+    {% include "includes/analytics.js.html" %}
+{% endif %}
 </body>
 </html>
