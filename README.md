@@ -31,6 +31,28 @@ Here are the plugins that should work out of the box with that theme if enabled:
 
     Extends the translations functionality by creating internationalized sub-sites for the default site. Also takes care of translating theme items.
 
+
+## Localization | Translation
+
+This theme has some items / texts marked as localized in templates files. It relies on the [Jinja2 i18n extension] (http://jinja.pocoo.org/docs/templates/#i18n) to do the job and replace these texts with their translated couterparts in the appropriate language.
+
+It means that you need to enable the jinja2.ext.i18n extension by adding the following line to your pelican configuration :
+```python
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
+```
+
+*THIS IS MANDATORY*, please don't skip this step otherwise you won't be able to generate the website.
+
+
+### Add translations for a language
+
+You downloaded this theme and love it but unfortunately your favorite language is not supported ?
+-> *We need you !*
+
+1. Please follow these [instructions](https://github.com/getpelican/pelican-plugins/blob/master/i18n_subsites/localizing_using_jinja2.rst) for how to translate template items
+2. Make a pull request
+3. Receive many thanks from the community :)
+
   
 ## Setup for an existing pelican website
 
@@ -42,6 +64,9 @@ Here are the plugins that should work out of the box with that theme if enabled:
 # -*- coding: utf-8 -*- #
 
 from __future__ import unicode_literals
+
+# Required as some texts in this theme templates are localized with gettext
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
 # User info
 AUTHOR = u'Your name'

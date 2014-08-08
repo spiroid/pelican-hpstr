@@ -1,6 +1,3 @@
-# Babel files
-*.mo
-
 # Styles
 # SCSS -> CSS source maps
 *.map
