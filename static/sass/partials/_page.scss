@@ -61,18 +61,25 @@ body {
 }
 
 .feature .header-title {
-    position: absolute;
-    top: 0;
     display: table;
     margin-top: 0;
     width: 100%;
     height: 400px;
     overflow: hidden;
+    background-attachment: scroll, scroll;
+    background-clip: border-box, border-box;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     .header-title-wrap {
         display: table-cell;
         vertical-align: middle;
         margin: 0 auto;
         text-align: center;
+        z-index: 1;
     }
     h1 {
         margin: 10px;
@@ -93,35 +100,6 @@ body {
                 color: $white;
             }
         }
-    }
-}
-
-.entry-image {
-    position: relative;
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-    min-height: 400px;
-    overflow: hidden;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($base-color, 0.3);
-    }
-    img {
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        right: 0; 
-        bottom: 0; 
-        margin: auto; 
-        min-width: 50%;
-        min-height: 50%;
     }
 }
 
@@ -336,7 +314,7 @@ body {
     }
 }
 
-// Post Index 
+// Post Index
 // --------------------------------------------------
 #post-index {
     #main {

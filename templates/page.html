@@ -9,27 +9,19 @@
     {% endif %}
 {% endblock %}
 
-{% block header %}
-{% if page.metadata.image %}
-<div class="entry-header">
-    {% if page.metadata.image_credit %}
-    <div class="image-credit">
-        {{ _('Image source:') }} {% if page.metadata.image_creditlink %}<a href="{{ page.metadata.image_creditlink }}">{% endif %}{{ page.metadata.image_credit }}{% if page.metadata.image_creditlink %}</a>{% endif %}
-    </div><!-- /.image-credit -->
-    {% endif %}
-    <div class="entry-image">
-        <img src="{{ SITEURL }}/images/{{ page.metadata.image }}" alt="{{ page.title }}">
-    </div><!-- /.entry-image -->
-</div><!-- /.entry-header -->
-{% endif %}
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
 <article class="entry">
-    <header class="header-title">
+    <header class="header-title"{% if page.metadata.image %} style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ SITEURL }}/images/{{ page.metadata.image }}')"{% endif %}>
         <div class="header-title-wrap">
             <h1 class="entry-title"><a href="{{ pageurl }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
         </div><!-- /.header-title-wrap -->
+        {% if page.metadata.image and page.metadata.image_credit %}
+        <div class="image-credit">
+            {{ _('Image source:') }} {% if page.metadata.image_creditlink %}<a href="{{ page.metadata.image_creditlink }}">{% endif %}{{ page.metadata.image_credit }}{% if page.metadata.image_creditlink %}</a>{% endif %}
+        </div><!-- /.image-credit -->
+        {% endif %}
     </header>
     <div class="entry-content">
         {{ page.content }}

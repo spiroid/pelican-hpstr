@@ -15,28 +15,20 @@
     {{ background_image(article.metadata.image_background)}}
 {% endblock %}
 
-{% block header %}
-{% if article.metadata.image %}
-<div class="entry-header">
-    {% if article.metadata.image_credit %}
-    <div class="image-credit">
-        {{ _('Image source:') }} {% if article.metadata.image_creditlink %}<a href="{{ article.metadata.image_creditlink }}">{% endif %}{{ article.metadata.image_credit }}{% if article.metadata.image_creditlink %}</a>{% endif %}
-    </div><!-- /.image-credit -->
-    {% endif %}
-    <div class="entry-image">
-        <img src="{{ SITEURL }}/images/{{ article.metadata.image }}" alt="{{ article.title }}">
-    </div><!-- /.entry-image -->
-</div><!-- /.entry-header -->
-{% endif %}
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
 <article class="entry">
-    <header class="header-title">
+    <header class="header-title"{% if article.metadata.image %} style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ SITEURL }}/images/{{ article.metadata.image }}')"{% endif %}>
         <div class="header-title-wrap">
             <h1 class="entry-title"><a href="{{ articleurl }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h1>
             <h2><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></h2>
         </div><!-- /.header-title-wrap -->
+        {% if article.metadata.image and article.metadata.image_credit %}
+        <div class="image-credit">
+            {{ _('Image source:') }} {% if article.metadata.image_creditlink %}<a href="{{ article.metadata.image_creditlink }}">{% endif %}{{ article.metadata.image_credit }}{% if article.metadata.image_creditlink %}</a>{% endif %}
+        </div><!-- /.image-credit -->
+        {% endif %}
     </header>
     <div class="entry-content">
         {{ article.content }}
