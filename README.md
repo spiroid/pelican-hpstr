@@ -53,7 +53,7 @@ You downloaded this theme and love it but unfortunately your favorite language i
 2. Make a pull request
 3. Receive many thanks from the community :)
 
-  
+
 ## Setup for an existing pelican website
 
 1. Clone this theme into your pelican's site theme directory
@@ -104,14 +104,16 @@ PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = ['related_posts', 'sitemap', 'i18n_subsites']
 
 # Theme
-THEME = "theme/pelican-hpstr"
+THEME = 'theme/pelican-hpstr'
 
+# Theme options
+BACKGROUND = 'bg_image.png'
 
 # Social widgets
 SOCIAL = (('github', 'https://github.com/yourname', 'GitHub'),
           ('twitter', 'http://twitter.com/yourname'),
           ('linkedin', 'http://fr.linkedin.com/in/yourname', 'LinkedIn'),)
-          
+
 # Sitemap configuration
 SITEMAP = {
     'format': 'xml',

@@ -1,5 +1,5 @@
 {% macro background_image(image) -%}
-{% set bg_image = image if image else BACKGOURND %}
+{% set bg_image = image if image else BACKGROUND %}
 {% if bg_image %}
     <style type="text/css">body { background-image:url({{ SITEURL }}/images/{{ bg_image }}); }</style>
 {% endif %}
