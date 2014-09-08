@@ -1,6 +1,23 @@
-<!-- Google Authorship and Publisher Markup -->
 {% if SOCIAL_META %}
     {% if SOCIAL_META['google'] %}
-    <link rel="author" href={{"https://plus.google.com/+" + SOCIAL_META['google']}} />
+    <!-- Google Authorship and Publisher Markup -->
+    <link rel="author" href="{{'https://plus.google.com/+' + SOCIAL_META['google']}}" />
     {% endif %}
+
+    {% if SOCIAL_META['twitter'] %}
+    <!-- Twitter Cards -->
+    {% if article.metadata.image %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="{{SITE_URL}}/images/{{article.metadata.image}}">
+    {% else %}
+    <meta name="twitter:card" content="summary">
+    {% endif %}
+    <meta name="twitter:title" content="{{article.title}}" >
+    <meta name="twitter:description" content="{{article.summary | striptags}}" >
+
+    {% if SOCIAL_META['twitter']['creator'] %}
+    <meta name="twitter:creator" content="{{ SOCIAL_META['twitter']['creator'] }}" >
+    {% endif%}
+
+    {% endif%}
 {% endif %}
