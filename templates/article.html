@@ -15,6 +15,11 @@
     {{ background_image(article.metadata.image_background)}}
 {% endblock %}
 
+{% block head_extra %}
+    <!-- article specific header -->
+    {% include "includes/social-metadata.html" %}
+{% endblock %}
+
 {% block header %}{% endblock %}
 
 {% block content %}
