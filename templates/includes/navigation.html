@@ -10,7 +10,9 @@
                     <h4>{{ AUTHOR }}</h4>
                     <p>{{ AUTHOR_ABOUT }}</p>
                 </li>
-                <li><a href="{{ SITEURL }}/about.html">{{ _('Learn More') }}</a></li>
+                {% if ABOUT_PAGE %}
+                <li><a href="{{ SITEURL }}/{{ ABOUT_PAGE }}">{{ _('Learn More') }}</a></li>
+                {% endif %}
                 {% if EMAIL %}
                 <li>
                 <a href="mailto:{{ EMAIL }}"><i class="fa fa-envelope"></i> {{ _('Email') }}</a>

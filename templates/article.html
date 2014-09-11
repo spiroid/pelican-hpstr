@@ -47,7 +47,13 @@
             <p>
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> {{ _('was published on') }} <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span>
                 {% if article.modified %}({{ _('revised:') }} <span class="entry-date date modified"><time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time></span>){% endif %}<br>
-                <span class="author vcard"><span class="fn"><a href="{{ SITEURL }}/about/" title="About {{ AUTHOR }}">{{ AUTHOR }}</a></span></span>
+                <span class="author vcard"><span class="fn">
+                {% if ABOUT_PAGE %}
+                    <a href="{{ SITEURL }}/about.html" title="About {{ AUTHOR }}">{{ AUTHOR }}</a>
+                {% else %}
+                    {{ AUTHOR }}
+                {% endif %}
+                </span></span>
                 {% if article.category %}
                     <span class="entry-category">&nbsp;{{ _('in') }}&nbsp;&nbsp;<i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" >{{ article.category }}</a></span>
                 {% endif %}
