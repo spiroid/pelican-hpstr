@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-05-21 22:46+0200\n"
+"POT-Creation-Date: 2014-09-12 14:30+0200\n"
 "PO-Revision-Date: 2014-05-20 14:05+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -21,27 +21,27 @@ msgstr ""
 msgid "Archives"
 msgstr "Archives"
 
-#: templates/article.html:23 templates/page.html:17
+#: templates/article.html:34 templates/page.html:22
 msgid "Image source:"
 msgstr "Source de l'image :"
 
-#: templates/article.html:51
+#: templates/article.html:48
 msgid "was published on"
 msgstr "a été publié le"
 
-#: templates/article.html:52
+#: templates/article.html:49
 msgid "revised:"
 msgstr "modifié le :"
 
-#: templates/article.html:55
+#: templates/article.html:58
 msgid "in"
 msgstr "dans"
 
-#: templates/article.html:84
+#: templates/article.html:87
 msgid "Continue reading"
 msgstr "Lire la suite"
 
-#: templates/article.html:93
+#: templates/article.html:96
 msgid "Published on"
 msgstr "Publié le"
 
@@ -68,6 +68,22 @@ msgstr "Articles taggués avec le mot clé %(tag)s"
 msgid "Tags"
 msgstr "Mots clés"
 
+#: templates/includes/cc-license.html:59
+msgid "is"
+msgstr "est"
+
+#: templates/includes/cc-license.html:61
+msgid "Content"
+msgstr "Le contenu"
+
+#: templates/includes/cc-license.html:63
+msgid "licensed under a"
+msgstr "est proposé sous licence"
+
+#: templates/includes/cc-license.html:63
+msgid "except where indicated otherwise"
+msgstr "sauf mention contraire"
+
 #: templates/includes/footer.html:1
 msgid "Powered by"
 msgstr "Propulsé par"
@@ -88,23 +104,23 @@ msgstr "Accueil"
 msgid "About"
 msgstr "A propos"
 
-#: templates/includes/navigation.html:13
+#: templates/includes/navigation.html:14
 msgid "Learn More"
 msgstr "En savoir plus"
 
-#: templates/includes/navigation.html:16
+#: templates/includes/navigation.html:18
 msgid "Email"
 msgstr "Email"
 
-#: templates/includes/navigation.html:27
+#: templates/includes/navigation.html:29
 msgid "Posts"
 msgstr "Articles"
 
-#: templates/includes/navigation.html:29
+#: templates/includes/navigation.html:31
 msgid "All Tags"
 msgstr "Par mot clé"
 
-#: templates/includes/navigation.html:30
+#: templates/includes/navigation.html:32
 msgid "All Categories"
 msgstr "Par catégorie"
 
@@ -123,3 +139,4 @@ msgstr "Page suivante"
 #: templates/includes/pagination.html:25
 msgid "Next"
 msgstr "Suivant"
+
