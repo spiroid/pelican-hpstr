@@ -23,11 +23,11 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<article class="entry">
+<article class="entry" vocab="http://schema.org/" typeof="BlogPosting">
     <header class="header-title"{% if article.metadata.image %} style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ SITEURL }}/images/{{ article.metadata.image }}')"{% endif %}>
         <div class="header-title-wrap">
-            <h1 class="entry-title"><a href="{{ articleurl }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a></h1>
-            <h2><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></h2>
+            <h1 class="entry-title"><a href="{{ articleurl }}" rel="bookmark" title="{{ article.title }}" property="url"><span property="name">{{ article.title }}</span></a></h1>
+            <h2><time datetime="{{ article.date.isoformat() }}" property="datePublished">{{ article.locale_date }}</time></h2>
         </div><!-- /.header-title-wrap -->
         {% if article.metadata.image and article.metadata.image_credit %}
         <div class="image-credit">
@@ -35,42 +35,42 @@
         </div><!-- /.image-credit -->
         {% endif %}
     </header>
-    <div class="entry-content">
+    <div class="entry-content" property="articleBody">
         {{ article.content }}
-        <footer class="entry-meta">
-            {% if article.tags %}
-            <span class="entry-tags">
-                {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% endfor %}
-            </span>
-            {% endif %}
-
-            <p>
-                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> {{ _('was published on') }} <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span>
-                {% if article.modified %}({{ _('revised:') }} <span class="entry-date date modified"><time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time></span>){% endif %}<br>
-                <span class="author vcard"><span class="fn">
-                {% if ABOUT_PAGE %}
-                    <a href="{{ SITEURL }}/about.html" title="About {{ AUTHOR }}">{{ AUTHOR }}</a>
-                {% else %}
-                    {{ AUTHOR }}
-                {% endif %}
-                </span></span>
-                {% if article.category %}
-                    <span class="entry-category">&nbsp;{{ _('in') }}&nbsp;&nbsp;<i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" >{{ article.category }}</a></span>
-                {% endif %}
-            </p>
-
-            {% if article.metadata.share %}
-            <div class="social-share">
-                <ul class="socialcount socialcount-small inline-list">
-                    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ articleurl }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-                    <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ articleurl }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-                    <li class="googleplus"><a href="https://plus.google.com/share?url={{ articleurl }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
-                </ul>
-            </div><!-- /.social-share -->
-            {% endif %}
-
-        </footer>
     </div><!-- /.entry-content -->
+    <footer class="entry-meta">
+        {% if article.tags %}
+        <span class="entry-tags" property="keywords">
+            {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% endfor %}
+        </span>
+        {% endif %}
+
+        <p>
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title }}">{{ article.title }}</a> {{ _('was published on') }} <span class="entry-date date published updated"><time datetime="{{ article.date.isoformat()  }}">{{ article.locale_date }}</time></span>
+            {% if article.modified %}({{ _('revised:') }} <span class="entry-date date modified"><time datetime="{{ article.modified.isoformat() }}" property="dateModified">{{ article.modified | strftime('%d %B %Y') }}</time></span>){% endif %}<br>
+            <span class="author vcard" property="author"><span class="fn" vocab="http://schema.org/" typeof="Person">
+            {% if ABOUT_PAGE %}
+                <a href="{{ SITEURL }}/about.html" title="About {{ AUTHOR }}" property="url"><span property="name">{{ AUTHOR }}</span></a>
+            {% else %}
+                <span property="name">{{ AUTHOR }}</span>
+            {% endif %}
+            </span></span>
+            {% if article.category %}
+                <span class="entry-category">&nbsp;{{ _('in') }}&nbsp;&nbsp;<i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" property="genre">{{ article.category }}</a></span>
+            {% endif %}
+        </p>
+
+        {% if article.metadata.share %}
+        <div class="social-share">
+            <ul class="socialcount socialcount-small inline-list">
+                <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ articleurl }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+                <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ articleurl }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+                <li class="googleplus"><a href="https://plus.google.com/share?url={{ articleurl }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+            </ul>
+        </div><!-- /.social-share -->
+        {% endif %}
+
+    </footer>
 
     {# TODO -- comments {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %} #}
 
