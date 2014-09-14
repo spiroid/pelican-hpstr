@@ -1,8 +1,8 @@
 # HPSTR Pelican Theme
 
-This is a port of the [HPSTR Theme](https://github.com/mmistakes/hpstr-jekyll-theme) to [Pelican](https://github.com/getpelican/pelican) static site generator.
+This is a port of the [HPSTR Theme](https://github.com/mmistakes/hpstr-jekyll-theme) to the [Pelican](https://github.com/getpelican/pelican) static site generator.
 
-All credits for the Jekyll initial theme go to [Michael Rose](https://github.com/mmistakes)
+All credits for the initial Jekyll theme go to [Michael Rose](https://github.com/mmistakes)
 
 
 ## What HPSTR brings to the table:
