@@ -12,10 +12,10 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<article class="entry">
+<article class="entry" vocab="http://schema.org/" typeof="WebPage">
     <header class="header-title"{% if page.metadata.image %} style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ SITEURL }}/images/{{ page.metadata.image }}')"{% endif %}>
         <div class="header-title-wrap">
-            <h1 class="entry-title"><a href="{{ pageurl }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
+            <h1 class="entry-title" property="name"><a href="{{ pageurl }}" rel="bookmark" title="{{ page.title }}" property="url">{{ page.title }}</a></h1>
         </div><!-- /.header-title-wrap -->
         {% if page.metadata.image and page.metadata.image_credit %}
         <div class="image-credit">
@@ -23,19 +23,19 @@
         </div><!-- /.image-credit -->
         {% endif %}
     </header>
-    <div class="entry-content">
+    <div class="entry-content" propery="text">
         {{ page.content }}
-        <footer class="entry-meta">
-            {% if page.metadata.share %}
-            <div class="social-share">
-                <ul class="socialcount socialcount-small inline-list">
-                    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ pageurl }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-                    <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ pageurl }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-                    <li class="googleplus"><a href="https://plus.google.com/share?url={{ pageurl }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
-                </ul>
-            </div><!-- /.social-share -->
-            {% endif %}
-        </footer>
     </div><!-- /.entry-content -->
+    <footer class="entry-meta">
+        {% if page.metadata.share %}
+        <div class="social-share">
+            <ul class="socialcount socialcount-small inline-list">
+                <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ pageurl }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+                <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ pageurl }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+                <li class="googleplus"><a href="https://plus.google.com/share?url={{ pageurl }}" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+            </ul>
+        </div><!-- /.social-share -->
+        {% endif %}
+    </footer>
 </article>
 {% endblock%}

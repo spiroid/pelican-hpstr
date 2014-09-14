@@ -26,7 +26,7 @@
 <article class="entry" vocab="http://schema.org/" typeof="BlogPosting">
     <header class="header-title"{% if article.metadata.image %} style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ SITEURL }}/images/{{ article.metadata.image }}')"{% endif %}>
         <div class="header-title-wrap">
-            <h1 class="entry-title"><a href="{{ articleurl }}" rel="bookmark" title="{{ article.title }}" property="url"><span property="name">{{ article.title }}</span></a></h1>
+            <h1 class="entry-title" property="name"><a href="{{ articleurl }}" rel="bookmark" title="{{ article.title }}" property="url">{{ article.title }}</a></h1>
             <h2><time datetime="{{ article.date.isoformat() }}" property="datePublished">{{ article.locale_date }}</time></h2>
         </div><!-- /.header-title-wrap -->
         {% if article.metadata.image and article.metadata.image_credit %}
