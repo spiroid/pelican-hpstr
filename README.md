@@ -1,7 +1,8 @@
 # HPSTR Pelican Theme
 
-This is an copy and port to [Pelican](https://github.com/getpelican/pelican) static site generator of the [HPSTR Theme](https://github.com/mmistakes/hpstr-jekyll-theme)
-All credits for that beautiful theme go to [Michael Rose](https://github.com/mmistakes)
+This is a port of the [HPSTR Theme](https://github.com/mmistakes/hpstr-jekyll-theme) to [Pelican](https://github.com/getpelican/pelican) static site generator.
+
+All credits for the Jekyll initial theme go to [Michael Rose](https://github.com/mmistakes)
 
 
 ## What HPSTR brings to the table:
@@ -15,6 +16,8 @@ All credits for that beautiful theme go to [Michael Rose](https://github.com/mmi
 * Social Sharing links for Facebook, Twitter, and Google+ if you choose to enable.
 * [FontAwesome](http://fortawesome.github.io/Font-Awesome/) 4.1.0 ready. Include any of the [439 available icons](http://fortawesome.github.io/Font-Awesome/icons/) in your blog posts.
 * Google Analytics
+* Google Authorship, [OpenGraph](http://ogp.me/) and [Twitter Cards](https://dev.twitter.com/cards/overview) metadata for better SEO and sharing / distribution on social network plateforms
+* Semantic information via rdfa-lite in article ([BlogPosting](http://schema.org/BlogPosting)) and page ([WebPage](http://schema.org/WebPage)) templates
 
 
 ## Supported plugins
@@ -95,7 +98,7 @@ SITEURL = ''
 
 # Directories configuration
 PATH = 'content'
-ARTICLE_DIR = 'posts'
+ARTICLE_PATHS = ['posts']
 
 # Any extra files should be added here
 STATIC_PATHS = [
@@ -118,7 +121,7 @@ USE_FOLDER_AS_CATEGORY = False
 DEFAULT_CATEGORY = 'Misc'
 
 # Plugin path
-PLUGIN_PATH = '../pelican-plugins'
+PLUGIN_PATHS = ['../pelican-plugins']
 PLUGINS = ['related_posts', 'sitemap', 'i18n_subsites']
 
 # Theme
