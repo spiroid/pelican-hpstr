@@ -1,5 +1,8 @@
-<span>&copy; {{ AUTHOR }}. {{ _('Powered by') }} <a href="http://blog.getpelican.com/">Pelican</a> {{ _('using') }} <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a> | <a href="https://github.com/spiroid/pelican-hpstr">Pelican HPSTR style</a></span>
 {%- if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
   {% from 'includes/cc-license.html' import cc_license_mark %}
   <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
+  <span>
+{% else %}
+  <span>&copy; {{ AUTHOR }}.
 {% endif %}
+{{ _('Powered by') }} <a href="http://blog.getpelican.com/">Pelican</a> {{ _('using') }} <a href="http://mademistakes.com/hpstr/">HPSTR Theme</a> | <a href="https://github.com/spiroid/pelican-hpstr">Pelican HPSTR style</a></span>
