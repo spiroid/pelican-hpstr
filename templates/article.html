@@ -72,7 +72,9 @@
 
     </footer>
 
-    {# TODO -- comments {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %} #}
+   {% if DISQUS_SITENAME %}
+             {% include 'disqus.html' %}		             
+    {% endif %}
 
     {% if article.related_posts %}
     <div id="read-more" class="read-more">
